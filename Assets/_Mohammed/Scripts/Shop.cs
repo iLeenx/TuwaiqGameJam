@@ -4,7 +4,6 @@ public class Shop : MonoBehaviour, Iinteractable
 {
     private bool isStealing = false;
     private bool canCollect = false;
-    private Collider _colldier;
     private PlayerInventory _playerInventory;
 
     [SerializeField] private string _actionName;
@@ -18,7 +17,6 @@ public class Shop : MonoBehaviour, Iinteractable
 
     private void Awake()
     {
-        _colldier = GetComponent<Collider>();
     }
 
     private void Start()
@@ -27,7 +25,7 @@ public class Shop : MonoBehaviour, Iinteractable
     }
     private void Update()
     {
-        if(canCollect)
+        if(canCollect && gameObject.layer == 7)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1)){
                 isStealing = false;
@@ -47,10 +45,11 @@ public class Shop : MonoBehaviour, Iinteractable
             if (_playerInventory != null)
             {
                 canCollect = false;
-                _colldier.enabled = false;
                 item.isCollected = true;
                 item.isStolen = true;
                 _playerInventory.Additem(item);
+                GameUIManager.instance.HideChoicePanel();
+                gameObject.layer = 0;
             }
         }
         else
@@ -61,9 +60,10 @@ public class Shop : MonoBehaviour, Iinteractable
                 if (_playerInventory != null)
                 {
                     canCollect = false;
-                    _colldier.enabled = false;
                     item.isCollected = true;
                     _playerInventory.Additem(item);
+                    GameUIManager.instance.HideChoicePanel();
+                    gameObject.layer = 0;
                 }
 
             }
@@ -72,17 +72,23 @@ public class Shop : MonoBehaviour, Iinteractable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && gameObject.layer == 7)
         {
             canCollect = true;
+            GameUIManager.instance.SetShopNameText(ActionName);
+            GameUIManager.instance.SetBuyAmount(item.price);
+            GameUIManager.instance.ShowChoicePanel();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && gameObject.layer == 7)
         {
             canCollect = false;
+            GameUIManager.instance.SetShopNameText("");
+            GameUIManager.instance.SetBuyAmount(0);
+            GameUIManager.instance.HideChoicePanel();
         }
     }
 

@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _noOfCoins = _startingCoins;
+        GameUIManager.instance.SetCoinText(_noOfCoins);
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
     public void addNumberCoins(int noOfCoins)
     {
         _noOfCoins += noOfCoins;
+        GameUIManager.instance.SetCoinText(_noOfCoins);
     }
 
     public bool spendCoins(int coinsToSpend)
@@ -52,6 +54,7 @@ public class GameManager : MonoBehaviour
             {
                 _noOfCoins = 0;
             }
+            GameUIManager.instance.SetCoinText(_noOfCoins);
             return true;
         }
     }

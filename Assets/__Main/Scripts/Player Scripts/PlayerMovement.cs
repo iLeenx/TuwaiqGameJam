@@ -132,14 +132,14 @@ public class PlayerMovement : MonoBehaviour
         _theRigidBody.linearVelocity = new Vector3(movementDir.x, _theRigidBody.linearVelocity.y, movementDir.z); // Changing the velocity based on Horizontal and Vertical Movements alongside camera direction.
 
         //Rotation
-        Vector3 lookDirection = cameraForward; //Taking the direction the camera is currently facing
+        Vector3 lookDirection = movementDir; //Taking the Direction of the player
 
         if (lookDirection != Vector3.zero) //on player movement
         {
             _targetRotation = Quaternion.LookRotation(lookDirection); // makes the target rotation that we want the player to move to
         }
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, rotationSpeed * Time.deltaTime); //Using lerp to smooth the player rotation using current rotation, target rotaion and rotation speed.
+        _theRigidBody.MoveRotation(Quaternion.Lerp(transform.rotation, _targetRotation, rotationSpeed * Time.deltaTime)); //Using lerp to smooth the player rotation using current rotation, target rotaion and rotation speed.
     }
 
     private void jump()

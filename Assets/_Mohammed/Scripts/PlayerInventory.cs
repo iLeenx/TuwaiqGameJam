@@ -36,7 +36,15 @@ public class PlayerInventory : MonoBehaviour
     public void Additem(ShoppingItem item) //Add item to the inventory and update UI
     {
         itemlist.Add(item);
-        _inventoryAudioSource.PlayOneShot(_inventoryAudioClips[2]);
+        if (!item.isStolen)
+        {
+            _inventoryAudioSource.PlayOneShot(_inventoryAudioClips[2]);
+        }
+        else
+        {
+            _inventoryAudioSource.PlayOneShot(_inventoryAudioClips[3]);
+        }
+        
         //UIManger.instance.AddCollectible(item.icon);
     }
 
