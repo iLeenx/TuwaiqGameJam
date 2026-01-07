@@ -13,6 +13,8 @@ public class EndingManager : MonoBehaviour
 
     public bool playerCaughtByGuard = false;
 
+    private PlayOutTransition playOutTransition;
+
 
     // view results in ui
     //public TMP_Text boughtText;
@@ -156,7 +158,12 @@ public class EndingManager : MonoBehaviour
 
     void LoadStealEnding() 
     { 
-        Debug.Log("STEAL ENDING"); 
+        Debug.Log("STEAL ENDING");
+        playOutTransition = FindFirstObjectByType<PlayOutTransition>();
+        if (playOutTransition != null)
+        {
+            playOutTransition.LoadScene("StealEndingScene");
+        }
     }
     void LoadGoodEnding() 
     { 
