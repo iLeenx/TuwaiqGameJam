@@ -5,6 +5,7 @@ public class EndingManager : MonoBehaviour
 {
     public static EndingManager Instance;
 
+    public int totalRequiredItems = 3;
     public int boughtCount = 0;
     public int stolenCount = 0;
 
@@ -28,6 +29,11 @@ public class EndingManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+
+        if (EscapeConfirmUI.Instance == null)
+        {
+            Debug.LogError("EscapeConfirmUI is missing! activate it");
         }
     }
 
@@ -93,6 +99,11 @@ public class EndingManager : MonoBehaviour
         }
     }
 
+    public bool HasAllItems()
+    {
+        return (boughtCount + stolenCount) >= totalRequiredItems;
+    }
+
     public void ResetEndingData()
     {
         // in main menu or restart
@@ -115,12 +126,29 @@ public class EndingManager : MonoBehaviour
 
         endingDecided = true;
 
+        LoadEscapeEnding();
+    }
+
+    public void OnEscapeTrigger()
+    {
+        if (endingDecided) return;
+
         if (playerCaughtByGuard)
         {
+            endingDecided = true;
             LoadCaughtEnding();
+            return;
+        }
+
+        if (HasAllItems())
+        {
+            // show confirmation UI
+            EscapeConfirmUI.Instance.Show();
         }
         else
         {
+            // not complete ? escape directly
+            endingDecided = true;
             LoadEscapeEnding();
         }
     }
