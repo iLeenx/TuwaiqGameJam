@@ -36,4 +36,31 @@ public class PlayOutTransition : MonoBehaviour
         // now load the scene
         SceneManager.LoadScene(sceneName);
     }
+
+    public void Quit()
+    {
+        StartCoroutine(QuitAnim());
+    }
+    public IEnumerator QuitAnim()
+    {
+        transitionAnimator.SetTrigger("Start");
+
+        // wait until animation finishes
+        if (transitionAnimator != null)
+        {
+            // wait for the length of the current animation clip
+            AnimatorStateInfo stateInfo = transitionAnimator.GetCurrentAnimatorStateInfo(0);
+            float clipLength = transitionAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+
+            yield return new WaitForSeconds(clipLength);
+        }
+        else
+        {
+            yield return new WaitForSeconds(transitionTime);
+        }
+
+        // now quit the application
+        Application.Quit();
+        Debug.Log("Quit Application");
+    }
 }

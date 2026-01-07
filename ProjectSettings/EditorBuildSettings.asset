@@ -12,8 +12,29 @@ EditorBuildSettings:
     path: Assets/_Leen/Scene Trans/_main menu.unity
     guid: aaefdb104c9a6b247bc837e9c15bbc6b
   - enabled: 1
+    path: Assets/_Leen/Main Menu/Main menu.unity
+    guid: 3da236d4667cc5b498e630c17648c636
+  - enabled: 1
+    path: Assets/_Leen/Main Menu/Level 1.unity
+    guid: 3ee70ff50ec83ee4e9d52a9f42f5ff51
+  - enabled: 1
     path: Assets/_Leen/Scene Trans/_main menu 1.unity
     guid: a7c29b6eecab5f14d8855b6f6a62e2f6
+  - enabled: 1
+    path: Assets/_Leen/Ending/TestEndingManager.unity
+    guid: 0649bfac7b6482b4ca5d0d48a0834948
+  - enabled: 1
+    path: Assets/_Leen/Ending/GoodEndingScene.unity
+    guid: b4340912d2320d949bbe6ca734374ee2
+  - enabled: 1
+    path: Assets/_Leen/Ending/StealEndingScene.unity
+    guid: 4766af30adf1c7e4a85e589fedf6ad24
+  - enabled: 1
+    path: Assets/_Leen/Ending/CaughtEndingScene.unity
+    guid: 371b27f1fa5f98448a5a39fd0fa54034
+  - enabled: 1
+    path: Assets/_Leen/Ending/EscapeEndingScene.unity
+    guid: c9d097696d40ff44d8dee636316e6fad
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
