@@ -166,16 +166,32 @@ public class EndingManager : MonoBehaviour
         }
     }
     void LoadGoodEnding() 
-    { 
+    {
         Debug.Log("GOOD ENDING");
+        playOutTransition = FindFirstObjectByType<PlayOutTransition>();
+        if (playOutTransition != null)
+        {
+            playOutTransition.LoadScene("GoodEndingScene");
+        }
+
     }
     void LoadCaughtEnding() 
     { 
-        Debug.Log("CAUGHT ENDING"); 
+        Debug.Log("CAUGHT ENDING");
+        playOutTransition = FindFirstObjectByType<PlayOutTransition>();
+        if (playOutTransition != null)
+        {
+            playOutTransition.LoadScene("CaughtEndingScene");
+        }
     }
     void LoadEscapeEnding() 
     { 
-        Debug.Log("ESCAPE ENDING");
+        Debug.Log("ESCAPE ENDING"); 
+        playOutTransition = FindFirstObjectByType<PlayOutTransition>();
+        if (playOutTransition != null)
+        {
+            playOutTransition.LoadScene("EscapeEndingScene");
+        }
     }
 
     // ending signals
