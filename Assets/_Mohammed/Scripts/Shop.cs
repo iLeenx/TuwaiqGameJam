@@ -48,6 +48,7 @@ public class Shop : MonoBehaviour, Iinteractable
                 item.isCollected = true;
                 item.isStolen = true;
                 _playerInventory.Additem(item);
+                GameUIManager.instance.ToggleCheckList(item);
                 GameUIManager.instance.HideChoicePanel();
                 gameObject.layer = 0;
             }
@@ -62,10 +63,16 @@ public class Shop : MonoBehaviour, Iinteractable
                     canCollect = false;
                     item.isCollected = true;
                     _playerInventory.Additem(item);
+                    GameUIManager.instance.ToggleCheckList(item);
                     GameUIManager.instance.HideChoicePanel();
                     gameObject.layer = 0;
                 }
 
+            }
+            else
+            {
+                GameUIManager.instance.SetPromptText("\"You Don't Have Enough Qouroosh\"");
+                GameUIManager.instance.ShowPromptText();
             }
         }
     }

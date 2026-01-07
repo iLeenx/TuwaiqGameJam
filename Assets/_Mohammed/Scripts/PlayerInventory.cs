@@ -19,10 +19,14 @@ public class PlayerInventory : MonoBehaviour
             if (isOpen)
             {
                 _inventoryAudioSource.PlayOneShot(_inventoryAudioClips[0]);
+                GameUIManager.instance.ShowBagContainer();
+                GameUIManager.instance.HideListContainer();
             }
             else
             {
                 _inventoryAudioSource.PlayOneShot(_inventoryAudioClips[1]);
+                GameUIManager.instance.HideBagContainer();
+                GameUIManager.instance.ShowListContainer();
             }
 
             isOpen = isOpen ? false : true;

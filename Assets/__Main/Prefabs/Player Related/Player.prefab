@@ -491,7 +491,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &4300749787003415468
 MonoBehaviour:
@@ -557,8 +557,8 @@ MonoBehaviour:
   itemlist: []
   _inventoryAudioSource: {fileID: 7661943576542509808}
   _inventoryAudioClips:
-  - {fileID: 8300000, guid: 70494a7789b17a64c85f360fa8a8678f, type: 3}
-  - {fileID: 8300000, guid: ee7dd2622a200834a882b153d360d3d1, type: 3}
+  - {fileID: 8300000, guid: dc49c53fb49214741a0182e88327e293, type: 3}
+  - {fileID: 8300000, guid: d963fb175711d47429e01110725f1497, type: 3}
   - {fileID: 8300000, guid: 052e5a0d51b1aaa4c8a206925117a152, type: 3}
   - {fileID: 8300000, guid: 38c6288f06b1f5d47a1256dae1064058, type: 3}
 --- !u!1 &2794902924322665612

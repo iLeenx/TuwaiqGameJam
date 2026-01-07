@@ -588,6 +588,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8081078024992936813, guid: 9e31741edc6e889408adc8c202142970, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1435,7 +1439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Shop
   _actionName: Sambosa Shop
   item:
-    id: 1
+    id: 0
     icon: {fileID: 0}
     itemName: Sambosa
     price: 3
@@ -1738,6 +1742,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1964699806228467888, guid: 7e7d9cde06c29ce4a9fe13fd8c59e740, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 255
+      objectReference: {fileID: 0}
     - target: {fileID: 7322455333019709142, guid: 7e7d9cde06c29ce4a9fe13fd8c59e740, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1947,6 +1955,10 @@ PrefabInstance:
     - target: {fileID: 3301488782692459291, guid: 2c534d03533b0fc4bbeb6d462dc17e00, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4046060426971980196, guid: 2c534d03533b0fc4bbeb6d462dc17e00, type: 3}
+      propertyPath: _startingCoins
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5014443754657341924, guid: 2c534d03533b0fc4bbeb6d462dc17e00, type: 3}
       propertyPath: m_Name
