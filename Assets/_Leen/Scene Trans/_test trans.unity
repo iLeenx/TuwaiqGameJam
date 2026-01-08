@@ -263,6 +263,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af48d3d2b33bf02468fdd00576d7bad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayOutTransition
+--- !u!1001 &748288111
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 4e1bf06abbce06844bfe3b8c5dd6ae7c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.05138
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4e1bf06abbce06844bfe3b8c5dd6ae7c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4e1bf06abbce06844bfe3b8c5dd6ae7c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15.56309
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4e1bf06abbce06844bfe3b8c5dd6ae7c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4e1bf06abbce06844bfe3b8c5dd6ae7c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4e1bf06abbce06844bfe3b8c5dd6ae7c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4e1bf06abbce06844bfe3b8c5dd6ae7c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4e1bf06abbce06844bfe3b8c5dd6ae7c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4e1bf06abbce06844bfe3b8c5dd6ae7c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4e1bf06abbce06844bfe3b8c5dd6ae7c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642515158886164831, guid: 4e1bf06abbce06844bfe3b8c5dd6ae7c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c29d113bf331b0643b622c2a8762f254, type: 2}
+    - target: {fileID: 919132149155446097, guid: 4e1bf06abbce06844bfe3b8c5dd6ae7c, type: 3}
+      propertyPath: m_Name
+      value: T abaya (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4e1bf06abbce06844bfe3b8c5dd6ae7c, type: 3}
 --- !u!1 &1526780208
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,3 +972,4 @@ SceneRoots:
   - {fileID: 1701305270}
   - {fileID: 1971664749186513463}
   - {fileID: 1746018378}
+  - {fileID: 748288111}
