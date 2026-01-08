@@ -132,6 +132,14 @@ public class Enemy : MonoBehaviour
         agent.SetDestination(targetPos);
 
         float distToPlayer = Vector3.Distance(transform.position, player.position);
+
+        // Leen - player caught
+        if (distToPlayer <= stopDistance)
+        {
+            CatchPlayer();
+            return;
+        }
+
         if (distToPlayer > chaseLoseRange)
         {
             StartReturnToDoor();
@@ -242,5 +250,14 @@ public class Enemy : MonoBehaviour
 
         Quaternion rot = Quaternion.LookRotation(dir);
         transform.rotation = Quaternion.Slerp(transform.rotation, rot, 8f * Time.deltaTime);
+    }
+
+    void CatchPlayer()
+    {
+        // Leen - connect to ending script
+        EndingManager.Instance.OnPlayerCaught();
+        EndingManager.Instance.DecideEnding();
+
+        Debug.Log("Player caught by guard");
     }
 }

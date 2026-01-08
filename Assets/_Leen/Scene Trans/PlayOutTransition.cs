@@ -11,6 +11,7 @@ public class PlayOutTransition : MonoBehaviour
     // call this when you want to load a new scene
     public void LoadScene(string sceneName)
     {
+        Time.timeScale = 1f; // ensure time scale is normal
         StartCoroutine(PlayTransition(sceneName));
     }
 
