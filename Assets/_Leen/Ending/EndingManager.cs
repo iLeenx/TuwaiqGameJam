@@ -60,7 +60,7 @@ public class EndingManager : MonoBehaviour
         // EndingManager.Instance.DecideEnding();
     
 
-        if (boughtCount + stolenCount >= totalRequiredItems)
+        if (boughtCount + stolenCount >= totalRequiredItems || playerCaughtByGuard)
         {
             if (endingDecided == true) return;
 
