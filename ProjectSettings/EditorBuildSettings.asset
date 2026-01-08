@@ -24,16 +24,16 @@ EditorBuildSettings:
     path: Assets/_Leen/Ending/TestEndingManager.unity
     guid: 0649bfac7b6482b4ca5d0d48a0834948
   - enabled: 1
-    path: Assets/_Leen/Ending/GoodEndingScene.unity
+    path: Assets/_Leen/Ending/_Good/GoodEndingScene.unity
     guid: b4340912d2320d949bbe6ca734374ee2
   - enabled: 1
-    path: Assets/_Leen/Ending/StealEndingScene.unity
+    path: Assets/_Leen/Ending/_Steal/StealEndingScene.unity
     guid: 4766af30adf1c7e4a85e589fedf6ad24
   - enabled: 1
-    path: Assets/_Leen/Ending/CaughtEndingScene.unity
+    path: Assets/_Leen/Ending/_Caught/CaughtEndingScene.unity
     guid: 371b27f1fa5f98448a5a39fd0fa54034
   - enabled: 1
-    path: Assets/_Leen/Ending/EscapeEndingScene.unity
+    path: Assets/_Leen/Ending/_Escape/EscapeEndingScene.unity
     guid: c9d097696d40ff44d8dee636316e6fad
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
