@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5931391700562296908}
   - component: {fileID: 2655213224299243795}
   - component: {fileID: 6560236099315318260}
-  - component: {fileID: 7774497952333210348}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -90,28 +89,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7774497952333210348
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5030766738943895033}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &6758168031917231572
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +100,6 @@ GameObject:
   - component: {fileID: 431700409740862125}
   - component: {fileID: 5806306639031959435}
   - component: {fileID: 7800795777346622082}
-  - component: {fileID: 3121084447248249474}
   m_Layer: 0
   m_Name: Plane (1)
   m_TagString: Untagged
@@ -202,28 +178,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3121084447248249474
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6758168031917231572}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &7293552476596784219
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,9 +277,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8456738969137588009}
   - component: {fileID: 2025363455056376722}
-  - component: {fileID: -312224579200997909}
   - component: {fileID: 4352564170713163399}
   - component: {fileID: 1952493208192434496}
+  - component: {fileID: 235488511147134453}
   m_Layer: 0
   m_Name: coin
   m_TagString: Untagged
@@ -364,27 +318,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Coin
   coinAmount: 10
---- !u!135 &-312224579200997909
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8015832934040138563}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.2716806
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &4352564170713163399
 AudioSource:
   m_ObjectHideFlags: 0
@@ -497,3 +430,24 @@ MonoBehaviour:
   rotateSpeed: 50
   floatAmplitude: 0.2
   floatFrequency: 2
+--- !u!65 &235488511147134453
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015832934040138563}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.11590189, y: 0.46854728, z: 0.48656237}
+  m_Center: {x: 0, y: 0.0076257885, z: -0.010283768}
