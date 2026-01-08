@@ -101,6 +101,7 @@ public class Shop : MonoBehaviour, Iinteractable
             canCollect = true;
             GameUIManager.instance.SetShopNameText(ActionName);
             GameUIManager.instance.SetBuyAmount(item.price);
+            GameUIManager.instance.SetShopIconImage(item.icon);
             GameUIManager.instance.ShowChoicePanel();
         }
     }
@@ -112,6 +113,7 @@ public class Shop : MonoBehaviour, Iinteractable
             canCollect = false;
             GameUIManager.instance.SetShopNameText("");
             GameUIManager.instance.SetBuyAmount(0);
+            GameUIManager.instance.SetShopIconImage(null);
             GameUIManager.instance.HideChoicePanel();
         }
     }

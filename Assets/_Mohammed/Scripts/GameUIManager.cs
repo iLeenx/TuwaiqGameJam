@@ -11,6 +11,7 @@ public class GameUIManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI CoinText;
     [SerializeField] private TextMeshProUGUI ShopNameText;
+    [SerializeField] private Image ShopIconImage;
     [SerializeField] private TextMeshProUGUI BuyText;
     [SerializeField] private GameObject PromptTextObj;
 
@@ -67,6 +68,11 @@ public class GameUIManager : MonoBehaviour
     public void SetShopNameText(string shopName)
     {
         ShopNameText.text = shopName;
+    }
+
+    public void SetShopIconImage(Sprite image)
+    {
+        ShopIconImage.sprite = image;
     }
 
     public void SetBuyAmount(int coinAmount)
