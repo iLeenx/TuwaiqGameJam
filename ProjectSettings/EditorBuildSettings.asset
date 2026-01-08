@@ -5,19 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Leen/Scene Trans/_test trans.unity
     guid: aaefdb104c9a6b247bc837e9c15bbc6b
   - enabled: 1
     path: Assets/_Leen/Main Menu/Main menu.unity
     guid: 3da236d4667cc5b498e630c17648c636
   - enabled: 1
+    path: Assets/__Main/Scenes/GameScene.unity
+    guid: 9e934ddf66cca054c827c468ee447e92
+  - enabled: 0
     path: Assets/_Leen/Main Menu/Level 1.unity
     guid: 3ee70ff50ec83ee4e9d52a9f42f5ff51
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Leen/Scene Trans/_test trans 1.unity
     guid: a7c29b6eecab5f14d8855b6f6a62e2f6
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Leen/Ending/TestEndingManager.unity
     guid: 0649bfac7b6482b4ca5d0d48a0834948
   - enabled: 1
