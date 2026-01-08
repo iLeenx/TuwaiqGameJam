@@ -8,7 +8,12 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private AudioSource _inventoryAudioSource;
     [SerializeField] private AudioClip[] _inventoryAudioClips;
     private bool isOpen = false;
+    private Animator _animator;
 
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -40,6 +45,7 @@ public class PlayerInventory : MonoBehaviour
     public void Additem(ShoppingItem item) //Add item to the inventory and update UI
     {
         itemlist.Add(item);
+        _animator.SetTrigger("TakeTrigger");
         if (!item.isStolen)
         {
             _inventoryAudioSource.PlayOneShot(_inventoryAudioClips[2]);

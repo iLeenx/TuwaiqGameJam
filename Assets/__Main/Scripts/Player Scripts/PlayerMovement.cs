@@ -96,6 +96,8 @@ public class PlayerMovement : MonoBehaviour
         float Vertical = Input.GetAxisRaw("Vertical"); //Defining Char Z Axis.
 
         _isWalking = ((Horizontal != 0 || Vertical != 0) && _isGrounded); //Check if player is walking to play walkingSFX
+        _animator.SetBool("isWalking", _isWalking);
+        _animator.SetBool("isGrounded", _isGrounded);
 
         if (_isWalking && !_SFXSourceList[0].isPlaying) //if player is walking and the walking audio source is not playing, play it.
         {
@@ -104,10 +106,11 @@ public class PlayerMovement : MonoBehaviour
         else if (!_isWalking && _SFXSourceList[0].isPlaying) //if player STOPPED walking and the walking audio source is playing, stop it.
         {
             _SFXSourceList[0].Stop();
+            
         }
 
         //Stamina Checking
-        if(_isWalking && _isSprinting)
+        if (_isWalking && _isSprinting)
         {
             currentStamina -= Time.deltaTime;
             //UIManger.instance.UpdateStamina(currentStamina, maxStamina);
@@ -157,6 +160,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _theRigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             _canDoubleJump = true;
+            _animator.SetTrigger("JumpTrigger");
             _SFXSourceList[1].PlayOneShot(_SFXClipList[3]);
         }
         // Allow Player to double jump if NOT on ground and jump button pressed.
@@ -164,6 +168,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _theRigidBody.AddForce(Vector3.up * doubleJumpForce, ForceMode.Impulse);
             _canDoubleJump = false;
+            _animator.SetTrigger("JumpTrigger");
             _SFXSourceList[1].PlayOneShot(_SFXClipList[4]);
         }
 
@@ -178,12 +183,14 @@ public class PlayerMovement : MonoBehaviour
             _SFXSourceList[0].clip = _SFXClipList[2];
             _currentSpeed = runSpeed;
             _isSprinting = true;
+            _animator.SetBool("isSprinting", _isSprinting);
         }
         else if ((Input.GetKeyUp(KeyCode.LeftShift) || !_canSprint || !_isWalking) && !_isCrouched)
         {
             _SFXSourceList[0].clip = _SFXClipList[0];
             _currentSpeed = speed;
             _isSprinting = false;
+            _animator.SetBool("isSprinting", _isSprinting);
         }
 
         //Stamina Code
@@ -209,6 +216,7 @@ public class PlayerMovement : MonoBehaviour
             _playerCollider.center = new Vector3(0f, 0.003449329f, 0f);
             _playerCollider.height = crouchHeight;
             _isCrouched = true;
+            _animator.SetBool("isCrouched", _isCrouched);
             _currentSpeed = crouchSpeed;
             _SFXSourceList[0].clip = _SFXClipList[1];
 
@@ -225,6 +233,7 @@ public class PlayerMovement : MonoBehaviour
             _playerCollider.center = new Vector3(0f, 0.005028358f, 0f);
             _playerCollider.height = NormalHeight;
             _isCrouched = false;
+            _animator.SetBool("isCrouched", _isCrouched);
             _currentSpeed = speed;
             _SFXSourceList[0].clip = _SFXClipList[0];
             if (_isWalking)
@@ -260,6 +269,11 @@ public class PlayerMovement : MonoBehaviour
     private void StartBoredTimer()
     {
         _boredTimer += Time.deltaTime;
+    }
+
+    public bool getIsCrouched()
+    {
+        return _isCrouched;
     }
 
     private void OnDrawGizmos() //Gizmo to draw the ground checker sphere.
