@@ -49,13 +49,13 @@ public class PlayerInventory : MonoBehaviour
         if (!item.isStolen)
         {
             _inventoryAudioSource.PlayOneShot(_inventoryAudioClips[2]);
+            EndingManager.Instance.RegisterItem(ItemObtainType.Bought);
         }
         else
         {
             _inventoryAudioSource.PlayOneShot(_inventoryAudioClips[3]);
+            EndingManager.Instance.RegisterItem(ItemObtainType.Stolen);
         }
-        
-        //UIManger.instance.AddCollectible(item.icon);
     }
 
     public List<ShoppingItem> getInventoryList() // return the inventory.

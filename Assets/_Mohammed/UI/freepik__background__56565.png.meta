@@ -116,10 +116,10 @@ TextureImporter:
         x: 167
         y: 414
         width: 274
-        height: 274
+        height: 271
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 31, y: 29, z: 31, w: 28}
       customData: 
       outline: []
       physicsShape: []
@@ -136,12 +136,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 515
-        y: 414
+        y: 413
         width: 274
         height: 273
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 30, y: 30, z: 32, w: 30}
       customData: 
       outline: []
       physicsShape: []
@@ -158,12 +158,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 863
-        y: 415
+        y: 445
         width: 273
-        height: 272
+        height: 242
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 30, y: 0, z: 30, w: 32}
       customData: 
       outline: []
       physicsShape: []
@@ -185,7 +185,7 @@ TextureImporter:
         height: 274
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 31, y: 30, z: 30, w: 31}
       customData: 
       outline: []
       physicsShape: []
@@ -203,11 +203,11 @@ TextureImporter:
         serializedVersion: 2
         x: 1557
         y: 414
-        width: 274
+        width: 273
         height: 273
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 30, y: 29, z: 28, w: 30}
       customData: 
       outline: []
       physicsShape: []
@@ -223,13 +223,13 @@ TextureImporter:
       name: freepik__background__56565_5
       rect:
         serializedVersion: 2
-        x: 168
+        x: 172
         y: 67
-        width: 272
-        height: 273
+        width: 268
+        height: 272
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 37, y: 38, z: 38, w: 43}
       customData: 
       outline: []
       physicsShape: []
@@ -245,13 +245,13 @@ TextureImporter:
       name: freepik__background__56565_6
       rect:
         serializedVersion: 2
-        x: 515
+        x: 517
         y: 67
-        width: 273
-        height: 274
+        width: 271
+        height: 271
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 38, y: 45, z: 45, w: 42}
       customData: 
       outline: []
       physicsShape: []
@@ -267,13 +267,13 @@ TextureImporter:
       name: freepik__background__56565_7
       rect:
         serializedVersion: 2
-        x: 853
+        x: 864
         y: 63
-        width: 283
+        width: 272
         height: 290
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 40, y: 49, z: 44, w: 57}
       customData: 
       outline: []
       physicsShape: []
@@ -289,13 +289,13 @@ TextureImporter:
       name: freepik__background__56565_8
       rect:
         serializedVersion: 2
-        x: 1210
+        x: 1211
         y: 66
-        width: 273
+        width: 272
         height: 275
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 29, y: 37, z: 32, w: 33}
       customData: 
       outline: []
       physicsShape: []
@@ -317,7 +317,7 @@ TextureImporter:
         height: 274
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 35, y: 34, z: 32, w: 33}
       customData: 
       outline: []
       physicsShape: []

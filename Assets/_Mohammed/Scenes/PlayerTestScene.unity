@@ -1797,6 +1797,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4370347973608017753, guid: c794dd8c3b54768478bdc1a6e3061bb7, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370347973608017753, guid: c794dd8c3b54768478bdc1a6e3061bb7, type: 3}
+      propertyPath: runSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370347973608017753, guid: c794dd8c3b54768478bdc1a6e3061bb7, type: 3}
+      propertyPath: crouchSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8104968095202538169, guid: c794dd8c3b54768478bdc1a6e3061bb7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1850,6 +1862,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1205233669}
     m_Modifications:
+    - target: {fileID: 1141418370819070835, guid: 6abc462b3313b7e49a6cd0992e58ff82, type: 3}
+      propertyPath: item.icon
+      value: 
+      objectReference: {fileID: 21300000, guid: db27cddcc807c0a41acd3749dfcbe7a7, type: 3}
     - target: {fileID: 1141418370819070835, guid: 6abc462b3313b7e49a6cd0992e58ff82, type: 3}
       propertyPath: _shopKeeper
       value: 
@@ -2031,7 +2047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4046060426971980196, guid: 2c534d03533b0fc4bbeb6d462dc17e00, type: 3}
       propertyPath: _startingCoins
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5014443754657341924, guid: 2c534d03533b0fc4bbeb6d462dc17e00, type: 3}
       propertyPath: m_Name
