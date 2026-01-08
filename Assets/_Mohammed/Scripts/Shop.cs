@@ -4,9 +4,11 @@ public class Shop : MonoBehaviour, Iinteractable
 {
     private bool isStealing = false;
     private bool canCollect = false;
+    private PlayerMovement _playerMovement;
     private PlayerInventory _playerInventory;
 
     [SerializeField] private string _actionName;
+    [SerializeField] private Enemy _shopKeeper;
     public ShoppingItem item;
 
     public string ActionName
@@ -21,6 +23,7 @@ public class Shop : MonoBehaviour, Iinteractable
 
     private void Start()
     {
+        _playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         _playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
     }
     private void Update()
@@ -42,16 +45,30 @@ public class Shop : MonoBehaviour, Iinteractable
     {
         if (isStealing)
         {
-            if (_playerInventory != null)
+            if (_playerMovement.getIsCrouched())
             {
-                canCollect = false;
-                item.isCollected = true;
-                item.isStolen = true;
-                _playerInventory.Additem(item);
-                GameUIManager.instance.ToggleCheckList(item);
-                GameUIManager.instance.HideChoicePanel();
-                gameObject.layer = 0;
+                if (_playerInventory != null)
+                {
+                    canCollect = false;
+                    item.isCollected = true;
+                    item.isStolen = true;
+                    _playerInventory.Additem(item);
+                    GameUIManager.instance.ToggleCheckList(item);
+                    GameUIManager.instance.HideChoicePanel();
+                    gameObject.layer = 0;
+                    if(_shopKeeper != null)
+                    {
+                        _shopKeeper.OnTheft();
+                    }
+                    
+                }
             }
+            else
+            {
+                GameUIManager.instance.SetPromptText("You Have To Be Crouched To Steal");
+                GameUIManager.instance.ShowPromptText();
+            }
+            
         }
         else
         {
@@ -71,7 +88,7 @@ public class Shop : MonoBehaviour, Iinteractable
             }
             else
             {
-                GameUIManager.instance.SetPromptText("\"You Don't Have Enough Qouroosh\"");
+                GameUIManager.instance.SetPromptText("You Don't Have Enough Qouroosh");
                 GameUIManager.instance.ShowPromptText();
             }
         }

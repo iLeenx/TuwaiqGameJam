@@ -18,11 +18,13 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] private GameObject ListContainer;
     [SerializeField] private Image[] ItemCheckList;
 
+    [SerializeField] private Image EnergyFill;
+
     public static GameUIManager instance;
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -118,5 +120,10 @@ public class GameUIManager : MonoBehaviour
     public void HidePromptText()
     {
         PromptTextObj.SetActive(false);
+    }
+
+    public void SetEnergyFill(float currentEnergy, float maxEnergy)
+    {
+        EnergyFill.fillAmount = currentEnergy / maxEnergy;
     }
 }
