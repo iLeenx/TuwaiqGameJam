@@ -488,13 +488,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37fa781174d5f8d4687ffffc16a876fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 10
-  runSpeed: 15
-  crouchSpeed: 5
+  speed: 5
+  runSpeed: 10
+  crouchSpeed: 3
   maxStamina: 20
   currentStamina: 20
-  jumpForce: 20
-  doubleJumpForce: 10
+  jumpForce: 15
+  doubleJumpForce: 5
   rotationSpeed: 3
   NormalHeight: 0.01011984
   crouchHeight: 0.006961779
