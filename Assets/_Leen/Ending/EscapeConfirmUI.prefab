@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6804478820936744277}
   - component: {fileID: 3778950758062551600}
   m_Layer: 5
-  m_Name: Do you want to run panel
+  m_Name: EscapeConfirmUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
