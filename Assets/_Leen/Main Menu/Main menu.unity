@@ -5049,6 +5049,7 @@ GameObject:
   - component: {fileID: 1841903542}
   - component: {fileID: 1841903541}
   - component: {fileID: 1841903543}
+  - component: {fileID: 1841903544}
   m_Layer: 0
   m_Name: TipBox Swapper
   m_TagString: Untagged
@@ -5108,6 +5109,18 @@ MonoBehaviour:
   - {fileID: 272146455, guid: 51141160e1fdb324a9384b020aadd787, type: 3}
   - {fileID: -1883731837, guid: 51141160e1fdb324a9384b020aadd787, type: 3}
   swapTime: 5
+--- !u!114 &1841903544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841903540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6f5de14cd567d45a15d832241a5523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MouseUI
 --- !u!1 &1845010307
 GameObject:
   m_ObjectHideFlags: 0
@@ -5764,7 +5777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1659659081652792763, guid: de55991586cd48041bc9291cf2c007ca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: TestEndingManager
+      value: GameScene
       objectReference: {fileID: 0}
     - target: {fileID: 1659659081652792763, guid: de55991586cd48041bc9291cf2c007ca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
