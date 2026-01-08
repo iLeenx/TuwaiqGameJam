@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,10 +24,15 @@ public class GameManager : MonoBehaviour
         }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    private void OnEnable()
     {
-        _noOfCoins = _startingCoins;
-        GameUIManager.instance.SetCoinText(_noOfCoins);
+        SceneManager.sceneLoaded += resetCoins;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= resetCoins;
     }
 
     // Update is called once per frame
@@ -59,5 +65,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void resetCoins(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "GameScene")
+        {
+            _noOfCoins = 0;
+            _noOfCoins = _startingCoins;
+            GameUIManager.instance.SetCoinText(_noOfCoins);
 
-}
+        }
+    }
+
+    }

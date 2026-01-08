@@ -5,7 +5,7 @@ public class EndingManager : MonoBehaviour
 {
     public static EndingManager Instance;
 
-    public int totalRequiredItems = 3;
+    public int totalRequiredItems = 10;
     public int boughtCount = 0;
     public int stolenCount = 0;
 
@@ -60,29 +60,38 @@ public class EndingManager : MonoBehaviour
         // EndingManager.Instance.DecideEnding();
     
 
-        // to avoid multiple calls
-        if (endingDecided == true ) return;
-
-        endingDecided = true;
-
-        if (playerCaughtByGuard)
+        if (boughtCount + stolenCount >= totalRequiredItems)
         {
-            LoadCaughtEnding();
-            return;
-        }
+            if (endingDecided == true) return;
 
-        if (stolenCount > boughtCount)
-        {
-            LoadStealEnding();
-        }
-        else if (boughtCount > stolenCount)
-        {
-            LoadGoodEnding();
+            endingDecided = true;
+
+            if (playerCaughtByGuard)
+            {
+                LoadCaughtEnding();
+                return;
+            }
+
+            if (stolenCount > boughtCount)
+            {
+                LoadStealEnding();
+            }
+            else if (boughtCount > stolenCount)
+            {
+                LoadGoodEnding();
+            }
+            else
+            {
+                DecideRandomEnding();
+            }
         }
         else
         {
-            DecideRandomEnding();
+            GameUIManager.instance.SetPromptText("Collect All The Items in the List");
+            GameUIManager.instance.ShowPromptText();
         }
+        // to avoid multiple calls
+        
     }
 
 
