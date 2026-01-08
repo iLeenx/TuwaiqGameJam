@@ -10,14 +10,16 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 5;
     public float doubleJumpForce = 3;
     public float rotationSpeed = 3;
-    public float NormalHeight = 1;
-    public float crouchHeight = 0.65f;
+    public float NormalHeight = 0.01011984f;
+    public float crouchHeight = 0.006904654f;
     public bool canMove = true;
 
     private Rigidbody _theRigidBody;
     private Quaternion _targetRotation;
     private float _currentSpeed;
     private Transform _cameraTransform;
+    private CapsuleCollider _playerCollider;
+    private Animator _animator;
 
     [SerializeField] private float _groundCheckerOffset = -0.9f;
     [SerializeField] private float _groundCheckerRadius = 0.3f;
@@ -31,11 +33,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool _canDoubleJump;
     [SerializeField] private bool _canSprint;
     [SerializeField] private bool _canUncrouch = true;
+    [SerializeField] private bool _isBored = false;
+    [SerializeField] private float _boredTimer = 0;
+    [SerializeField] private float _timeTillBored;
     // Start is called once before the first execution of Update after the MonoBehaviour is created.
 
     private void Awake()
     {
         _theRigidBody = GetComponent<Rigidbody>(); //Getting Rigidbody from Player Object.
+        _playerCollider = GetComponent<CapsuleCollider>();
+        _animator = GetComponent<Animator>();
         _cameraTransform = Camera.main.transform;
     }
     void Start()
@@ -57,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
             jump();
             sprint();
             crouch();
+            CheckBoredTimer();
         }
 
 
@@ -198,7 +206,8 @@ public class PlayerMovement : MonoBehaviour
         //Crouch Code
         if (_isGrounded && !_isCrouched && !_isSprinting && Input.GetKeyDown(KeyCode.LeftControl))
         {
-            transform.localScale = new Vector3(1f, crouchHeight, 1f);
+            _playerCollider.center = new Vector3(0f, 0.003449329f, 0f);
+            _playerCollider.height = crouchHeight;
             _isCrouched = true;
             _currentSpeed = crouchSpeed;
             _SFXSourceList[0].clip = _SFXClipList[1];
@@ -213,7 +222,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (_isCrouched && _canUncrouch && Input.GetKeyDown(KeyCode.LeftControl))
         {
-            transform.localScale = new Vector3(1f, NormalHeight, 1f);
+            _playerCollider.center = new Vector3(0f, 0.005028358f, 0f);
+            _playerCollider.height = NormalHeight;
             _isCrouched = false;
             _currentSpeed = speed;
             _SFXSourceList[0].clip = _SFXClipList[0];
@@ -225,6 +235,31 @@ public class PlayerMovement : MonoBehaviour
 
             _SFXSourceList[2].PlayOneShot(_SFXClipList[6]);
         }
+    }
+
+    private void CheckBoredTimer()
+    {
+        if (!_isWalking)
+        {
+            StartBoredTimer();
+        }
+        else if (_boredTimer > 0)
+        {
+            _boredTimer = 0;
+            _isBored = false;
+            _animator.SetBool("isBored", _isBored);
+        }
+
+        if(!_isBored && _boredTimer >= _timeTillBored)
+        {
+            _isBored = true;
+            _animator.SetBool("isBored", _isBored);
+        }
+    }
+
+    private void StartBoredTimer()
+    {
+        _boredTimer += Time.deltaTime;
     }
 
     private void OnDrawGizmos() //Gizmo to draw the ground checker sphere.
