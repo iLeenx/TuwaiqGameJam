@@ -8,6 +8,7 @@ public class Shop : MonoBehaviour, Iinteractable
     private PlayerInventory _playerInventory;
 
     [SerializeField] private string _actionName;
+    [SerializeField] private Enemy _shopKeeper;
     public ShoppingItem item;
 
     public string ActionName
@@ -55,6 +56,11 @@ public class Shop : MonoBehaviour, Iinteractable
                     GameUIManager.instance.ToggleCheckList(item);
                     GameUIManager.instance.HideChoicePanel();
                     gameObject.layer = 0;
+                    if(_shopKeeper != null)
+                    {
+                        _shopKeeper.OnTheft();
+                    }
+                    
                 }
             }
             else

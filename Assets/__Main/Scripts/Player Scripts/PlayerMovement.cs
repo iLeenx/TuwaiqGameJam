@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         _currentSpeed = speed;
         currentStamina = maxStamina;
 
-        //UIManger.instance.UpdateStamina(currentStamina, maxStamina);
+        GameUIManager.instance.SetEnergyFill(currentStamina, maxStamina);
     }
 
     private void Update()
@@ -113,14 +113,14 @@ public class PlayerMovement : MonoBehaviour
         if (_isWalking && _isSprinting)
         {
             currentStamina -= Time.deltaTime;
-            //UIManger.instance.UpdateStamina(currentStamina, maxStamina);
+            GameUIManager.instance.SetEnergyFill(currentStamina, maxStamina);
         }
         else if (!_isSprinting)
         {
             if(currentStamina < maxStamina)
             {
                 currentStamina += Time.deltaTime;
-                //UIManger.instance.UpdateStamina(currentStamina, maxStamina);
+                GameUIManager.instance.SetEnergyFill(currentStamina, maxStamina);
             }
         }
 
