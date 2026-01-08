@@ -25,6 +25,9 @@ public class Enemy : MonoBehaviour
     public string isChasingParam = "IsChasing";
     public string isReturningParam = "IsReturning";
 
+    public AudioSource[] audioSourceList;
+    public AudioClip[] audioClips;
+
     Transform player;
     NavMeshAgent agent;
     Animator animator;
@@ -44,6 +47,10 @@ public class Enemy : MonoBehaviour
 
         homePosition = transform.position;
         GoIdleAtHome();
+        audioSourceList[1].clip = audioClips[0];
+
+
+
     }
 
     void Update()
@@ -101,6 +108,12 @@ public class Enemy : MonoBehaviour
         }
 
         SetStateChasing();
+        audioSourceList[0].clip = audioClips[3];
+        audioSourceList[0].Play();
+
+        audioSourceList[1].loop = false;
+        audioSourceList[1].PlayOneShot(audioClips[1]);
+
     }
 
     void DoChase()
@@ -144,6 +157,8 @@ public class Enemy : MonoBehaviour
         agent.SetDestination(returnDoorPoint.position);
 
         SetAnim(false, true);
+        audioSourceList[0].clip = audioClips[2];
+        audioSourceList[0].Play();
     }
 
     void DoReturnToDoor()
@@ -191,6 +206,12 @@ public class Enemy : MonoBehaviour
             transform.position = snapPos;
 
         SetAnim(false, false);
+
+
+        audioSourceList[0].Stop();
+        audioSourceList[1].clip = audioClips[0];
+        audioSourceList[1].loop = true;
+        audioSourceList[1].Play();
     }
 
     void SetStateChasing()
