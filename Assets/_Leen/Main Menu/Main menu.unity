@@ -687,6 +687,81 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &356568122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 356568123}
+  - component: {fileID: 356568125}
+  - component: {fileID: 356568124}
+  m_Layer: 5
+  m_Name: tip image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &356568123
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356568122}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 868290450}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 522.7056, y: -444.53098}
+  m_SizeDelta: {x: 374.59, y: 59.31}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &356568124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356568122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 469484908, guid: 51141160e1fdb324a9384b020aadd787, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &356568125
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356568122}
+  m_CullTransparentMesh: 1
 --- !u!1001 &361896764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1874,8 +1949,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TabManager
   mainMenu: {fileID: 920096909}
-  settingsAudioMenu: {fileID: 0}
-  settingsMenu: {fileID: 0}
   tabs:
   - {fileID: 1225361106}
   - {fileID: 1279816954}
@@ -2393,6 +2466,7 @@ RectTransform:
   - {fileID: 920096910}
   - {fileID: 1225361107}
   - {fileID: 1910477411}
+  - {fileID: 356568123}
   - {fileID: 1279816955}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4974,6 +5048,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1841903542}
   - component: {fileID: 1841903541}
+  - component: {fileID: 1841903543}
   m_Layer: 0
   m_Name: TipBox Swapper
   m_TagString: Untagged
@@ -4988,7 +5063,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841903540}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f19a53aeaa23b147a4f94364a33ae76, type: 3}
   m_Name: 
@@ -5015,6 +5090,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1841903543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841903540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1057d4f13baa148aff5aa995b34c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImageSwapper
+  targetImage: {fileID: 356568124}
+  images:
+  - {fileID: 469484908, guid: 51141160e1fdb324a9384b020aadd787, type: 3}
+  - {fileID: 272146455, guid: 51141160e1fdb324a9384b020aadd787, type: 3}
+  - {fileID: -1883731837, guid: 51141160e1fdb324a9384b020aadd787, type: 3}
+  swapTime: 5
 --- !u!1 &1845010307
 GameObject:
   m_ObjectHideFlags: 0
@@ -5221,7 +5314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1910477411
 RectTransform:
   m_ObjectHideFlags: 0
